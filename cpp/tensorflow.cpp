@@ -267,7 +267,7 @@ float* TensorData(TfLiteTensor* tensor, int batch_index) {
 
 template<>
 uint8_t* TensorData(TfLiteTensor* tensor, int batch_index) {
-    int nelems = 0;
+    int nelems = 1;
     for (int i = 1; i < tensor->dims->size; i++) nelems *= tensor->dims->data[i];
     switch (tensor->type) {
         case kTfLiteUInt8:
